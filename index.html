@@ -100,15 +100,25 @@ nav{
   display:flex;flex-direction:column;
   justify-content:center;gap:0;
 }
-.hero-monogram{
-  width:120px;height:120px;border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:28px;position:relative;
+
+/* --- UPDATED: Profile Photo in Hero Right --- */
+.hero-photo-wrap{
+  width:130px;height:130px;
+  border:2px solid var(--gold);
+  overflow:hidden;
+  margin-bottom:28px;
+  position:relative;
+  flex-shrink:0;
 }
-.hero-monogram::before{
-  content:'';position:absolute;inset:-6px;border:1px solid rgba(200,168,75,0.08);
+.hero-photo-wrap::before{
+  content:'';position:absolute;inset:-6px;border:1px solid rgba(200,168,75,0.15);pointer-events:none;
 }
-.monogram-text{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:2px;color:var(--gold)}
+.hero-photo-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+}
+
 .hero-right-name{
   font-family:'DM Serif Display',serif;font-size:24px;color:var(--white);
   margin-bottom:4px;
@@ -166,17 +176,25 @@ section{padding:80px 3rem}
   font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;
   padding:12px 16px;text-align:center;
 }
-.wiki-av{height:120px;background:var(--black3);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--border)}
-.wiki-circle{
-  width:80px;height:80px;border:2px solid var(--gold);
+
+/* --- UPDATED: Wiki avatar now shows real photo --- */
+.wiki-av{
+  height:200px;background:var(--black3);
   display:flex;align-items:center;justify-content:center;
-  font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:var(--gold);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
 }
+.wiki-av img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+}
+
 .wt{width:100%;border-collapse:collapse}
 .wt td{padding:8px 14px;border-top:1px solid rgba(200,168,75,0.1);vertical-align:top;font-size:12px;line-height:1.5}
 .wt td:first-child{color:rgba(240,236,228,0.4);width:44%;font-size:11px;letter-spacing:0.5px}
 .wt td:last-child{color:var(--white)}
-.about-body p{color:rgba(240,236,228,0.75);margin-bottom:18px;font-size:15px;line-height:1.9;text-align:justify}
+.about-body p{color:rgba(240,236,228,0.75);margin-bottom:18px;font-size:15px;line-height:1.9}
 .about-body p:first-child::first-letter{
   font-family:'Bebas Neue',sans-serif;font-size:72px;
   float:left;line-height:0.75;margin:8px 10px 0 0;color:var(--gold);letter-spacing:0;
@@ -201,12 +219,12 @@ section{padding:80px 3rem}
   color:rgba(200,168,75,0.07);line-height:1;margin-bottom:16px;
 }
 .ec h3{font-family:'DM Serif Display',serif;font-size:20px;color:var(--white);margin-bottom:10px}
-.ec p{font-size:13px;color:rgba(240,236,228,0.5);line-height:1.7;text-align:justify}
+.ec p{font-size:13px;color:rgba(240,236,228,0.5);line-height:1.7}
 
 /* VSCAN */
 #vscan{background:var(--black)}
 .vscan-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.vscan-body p{font-size:15px;color:rgba(240,236,228,0.65);line-height:1.9;margin-bottom:18px;text-align:justify}
+.vscan-body p{font-size:15px;color:rgba(240,236,228,0.65);line-height:1.9;margin-bottom:18px}
 .vscan-name{
   font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;
   color:var(--gold);margin-bottom:6px;
@@ -240,7 +258,7 @@ section{padding:80px 3rem}
 .tl-yr{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 .tl-role{font-family:'DM Serif Display',serif;font-size:22px;color:var(--white);margin-bottom:4px}
 .tl-org{font-size:12px;color:rgba(240,236,228,0.4);margin-bottom:10px;letter-spacing:0.5px}
-.tl-desc{font-size:14px;color:rgba(240,236,228,0.6);line-height:1.75;text-align:justify}
+.tl-desc{font-size:14px;color:rgba(240,236,228,0.6);line-height:1.75}
 
 /* ACHIEVEMENTS */
 #achievements{background:var(--black)}
@@ -254,12 +272,12 @@ section{padding:80px 3rem}
 }
 .ac-icon{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:rgba(200,168,75,0.2);margin-bottom:12px;line-height:1}
 .ac h3{font-family:'DM Serif Display',serif;font-size:18px;color:var(--white);margin-bottom:8px}
-.ac p{font-size:13px;color:rgba(240,236,228,0.5);line-height:1.6;text-align:justify}
+.ac p{font-size:13px;color:rgba(240,236,228,0.5);line-height:1.6}
 
 /* CONTACT */
 #contact{background:var(--black2)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.contact-intro{font-size:15px;color:rgba(240,236,228,0.6);line-height:1.85;margin-bottom:32px;text-align:justify}
+.contact-intro{font-size:15px;color:rgba(240,236,228,0.6);line-height:1.85;margin-bottom:32px}
 .cr{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(200,168,75,0.08)}
 .c-icon{width:42px;height:42px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .c-lbl{font-size:10px;color:rgba(240,236,228,0.3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px}
@@ -324,7 +342,7 @@ footer{
       <div class="tag-text">Political Strategist &amp; Governance Thinker</div>
     </div>
     <div class="hero-name">VIKAS<br>KUMAR<br><span class="gold-word">CHOUDHARY</span></div>
-    <div class="hero-role">Founder &amp; CEO — V SCAN Alliance | Delhi, India</div>
+    <div class="hero-role">Founder &amp; CEO — V SCAN Alliance | Baghpat, UP, India</div>
     <div class="hero-quote">"Strategizing Governance.<br>Empowering Democracy."</div>
     <div class="hero-btns">
       <a class="btn btn-gold" href="#contact">Connect Now</a>
@@ -332,16 +350,19 @@ footer{
     </div>
   </div>
   <div class="hero-right">
-    <div class="hero-monogram"><div class="monogram-text">VK</div></div>
+    <!-- UPDATED: Real photo replacing monogram -->
+    <div class="hero-photo-wrap">
+      <img src="https://raw.githubusercontent.com/vikas-kumar-choudhary/vscan.github.io/main/vikas.jpeg" alt="Vikas Kumar Choudhary">
+    </div>
     <div class="hero-right-name">Vikas Kumar Choudhary</div>
     <div class="hero-right-title">Founder &amp; CEO<br>V SCAN Alliance</div>
     <table class="info-table">
       <tr><td>Born</td><td class="hi">Baghpat, UP, India</td></tr>
       <tr><td>Experience</td><td class="hi">7+ Years</td></tr>
-      <tr><td>Leaders Guided</td><td>100+ Leaders &amp; Parties</td></tr>
-      <tr><td>Reach</td><td>Pan-India (10+ States)</td></tr>
+      <tr><td>Leaders Guided</td><td>50+ Leaders &amp; Parties</td></tr>
+      <tr><td>Reach</td><td>Pan-India</td></tr>
       <tr><td>Intl. Conferences</td><td>5+ Selected</td></tr>
-      <tr><td>Talks Delivered</td><td>20+ Motivational</td></tr>
+      <tr><td>Talks Delivered</td><td>90+ Motivational</td></tr>
       <tr><td>Phone</td><td><a href="tel:8126487892" style="color:var(--gold2);text-decoration:none">8126487892</a></td></tr>
     </table>
   </div>
@@ -350,10 +371,10 @@ footer{
 <div class="stats-row">
   <div class="stats-inner">
     <div class="stat-block"><div class="stat-n">7+</div><div class="stat-l">Years Experience</div></div>
-    <div class="stat-block"><div class="stat-n">100+</div><div class="stat-l">Leaders Guided</div></div>
-    <div class="stat-block"><div class="stat-n">10+</div><div class="stat-l">States Covered</div></div>
+    <div class="stat-block"><div class="stat-n">50+</div><div class="stat-l">Leaders Guided</div></div>
+    <div class="stat-block"><div class="stat-n">Pan</div><div class="stat-l">India Reach</div></div>
     <div class="stat-block"><div class="stat-n">5+</div><div class="stat-l">Intl. Conferences</div></div>
-    <div class="stat-block"><div class="stat-n">20+</div><div class="stat-l">Motivational Talks</div></div>
+    <div class="stat-block"><div class="stat-n">90+</div><div class="stat-l">Motivational Talks</div></div>
   </div>
 </div>
 
@@ -365,25 +386,29 @@ footer{
     <div class="about-grid">
       <div class="wiki">
         <div class="wiki-h">Vikas Kumar Choudhary</div>
-        <div class="wiki-av"><div class="wiki-circle">VK</div></div>
+        <!-- UPDATED: Real photo in wiki card -->
+        <div class="wiki-av">
+          <img src="https://raw.githubusercontent.com/vikas-kumar-choudhary/vscan.github.io/main/vikas.jpeg" alt="Vikas Kumar Choudhary">
+        </div>
         <table class="wt">
-          <tr><td>Born</td><td>Anandpur urf Bandpur, Baghpat, UP</td></tr>
+          <tr><td>Born</td><td>Baghpat, Uttar Pradesh, India</td></tr>
           <tr><td>Nationality</td><td>Indian</td></tr>
           <tr><td>Occupation</td><td>Political Strategist, Governance Consultant, Speaker</td></tr>
           <tr><td>Title</td><td>Founder &amp; CEO</td></tr>
           <tr><td>Organization</td><td>V SCAN Alliance</td></tr>
           <tr><td>Full Form</td><td>Vikas Strategic Citizens Accountability Network</td></tr>
           <tr><td>Experience</td><td>7+ Years</td></tr>
-          <tr><td>Leaders</td><td>100+ Guided</td></tr>
-          <tr><td>Education</td><td>Journalism &amp; Public Administration, University of Delhi</td></tr>
+          <tr><td>Leaders</td><td>50+ Guided</td></tr>
+          <tr><td>Education</td><td>Journalism &amp; Public Administration</td></tr>
+          <tr><td>Email</td><td style="word-break:break-all"><a href="mailto:vikaskumarchoudhary@vscanalliance.com" style="color:var(--gold2);text-decoration:none">vikaskumarchoudhary@vscanalliance.com</a></td></tr>
           <tr><td>Phone</td><td>8126487892</td></tr>
         </table>
       </div>
       <div class="about-body">
-        <p>Vikas Kumar Choudhary, born in the village of Anandpur urf Bandpur, Baghpat, Uttar Pradesh, is a prominent political strategist, governance thinker, motivational speaker, and the Founder &amp; CEO of V SCAN Alliance (Vikas Strategic Citizens Accountability Network) — a next-generation political consulting and policy firm committed to accountable governance and citizen-first leadership across India.</p>
-        <p>With over 7 years of extensive experience, Vikas has guided 100+ political leaders and collaborated with 4+ political parties, successfully conceptualizing and leading 100+ political campaigns across 10+ states. His ethical, data-driven approach and deep grassroots understanding have established him as one of India's most trusted voices in political consulting. Prior to founding V SCAN Alliance, he already worked with India's top 1–2 political consulting firms as a Senior Political Consultant.</p>
-        <p>A landmark chapter in Vikas's career was his role as Media &amp; Senior PR Strategist with the State Election Commission, Delhi — where he led multidisciplinary teams of journalists and PR professionals, created large-scale voter awareness campaigns, and was directly responsible for increasing voter polling percentages across the capital. He managed PR operations and coordinated with all key stakeholders at the highest levels of governance.</p>
-        <p>Academically trained in Journalism and Public Administration from the University of Delhi (North Campus), Vikas cleared competitive entrances for institutions including Jamia Millia Islamia and Makhanlal Chaturvedi National University. He earned merit-based scholarships, participated in student rights movements, and represented India in national and overseas MUN conferences on global issues. He also held senior consulting roles at leading MNCs Henry Harvin and Data Trend, and has been selected for 5+ overseas conferences on governance, health, and poverty — delivering 20+ motivational talks inspiring the next generation of leaders.</p>
+        <p>Vikas Kumar Choudhary, born in Baghpat, Uttar Pradesh, India, is a prominent political strategist, governance thinker, motivational speaker, and the Founder &amp; CEO of V SCAN Alliance (Vikas Strategic Citizens Accountability Network) — a next-generation political consulting and policy firm committed to accountable governance and citizen-first leadership across India.</p>
+        <p>With over 7 years of extensive experience and a proven track record of guiding 50+ political leaders and parties, Vikas has established himself as one of India's most trusted voices in ethical and data-driven political consulting. His pan-India reach and deep understanding of electoral dynamics have helped candidates and parties achieve decisive victories across the country.</p>
+        <p>A landmark chapter in Vikas's career was his role as Media &amp; PR Strategist with the State Election Commission, Delhi — where he led a senior managerial team to create large-scale voter awareness campaigns and was directly responsible for increasing voter polling percentages across the capital. He managed PR operations and coordinated with all key stakeholders at the highest levels of governance.</p>
+        <p>Academically trained in Journalism and Public Administration, Vikas has also served as Senior Consultant at two leading MNCs — Hendry Harbin and Data Trend — managing national and international client networks and driving revenue through strategic sales and PR operations, working alongside Chetan Bhagat as brand ambassador. He has also been selected for 5+ international conferences on governance, health, and poverty — representing India on global platforms including India Model United Nations and India Social Talks — and has delivered 90+ motivational talks inspiring the next generation of leaders.</p>
       </div>
     </div>
   </div>
@@ -395,12 +420,12 @@ footer{
     <div class="st">Areas of Expertise</div>
     <div class="sd"><div class="sd-line"></div><div class="sd-gap"></div><div class="sd-line2"></div></div>
     <div class="exp-grid">
-      <div class="ec"><div class="ec-num">01</div><h3>Election Strategy</h3><p>With extensive experience across multiple political parties and leading political consultancies, Vikas Kumar Choudhary has held senior strategic roles and guided 100+ leaders. Having worked in over 10 states, he has consistently demonstrated expertise in designing and executing winning election strategies.</p></div>
-      <div class="ec"><div class="ec-num">02</div><h3>Media &amp; PR Strategy</h3><p>As a former Media and Senior PR Strategist with the State Election Commission, Delhi, he led journalist and PR teams to execute large-scale voter awareness campaigns, significantly enhancing polling percentages through strong ground execution. His prior experience as a Senior Consultant with renowned MNCs further reflects his excellence in media and public relations strategy.</p></div>
-      <div class="ec"><div class="ec-num">03</div><h3>Data-Driven Campaign Approach</h3><p>Vikas specializes in data-centric campaign planning and execution. His proven track record highlights strong capabilities in data analysis, voter profiling, and insight-driven decision-making.</p></div>
-      <div class="ec"><div class="ec-num">04</div><h3>Political &amp; Social Research / Governance Consulting</h3><p>Through deep grassroots research and a dedicated team operating across 10+ states, he has worked closely with leaders across parties, including those in power. His ability to understand public sentiment — the pulse of the people — positions him as a strong governance consultant with a practical, ground-level approach.</p></div>
-      <div class="ec"><div class="ec-num">05</div><h3>Global Issues Consulting</h3><p>With an academic background in Journalism and Public Administration, and participation in 5+ Model United Nations (MUNs) and national/overseas conferences, Vikas contributes insights on global issues such as environment, health, education, and livelihood — offering solution-oriented perspectives rooted in ground realities.</p></div>
-      <div class="ec"><div class="ec-num">06</div><h3>Motivational Speaking</h3><p>Having delivered 20+ motivational sessions across schools and colleges, Vikas focuses on impact-driven speaking rather than recognition. His continuous learning mindset and evolving global perspective reflect his growing excellence as a motivational speaker.</p></div>
+      <div class="ec"><div class="ec-num">01</div><h3>Election Strategy</h3><p>End-to-end campaign architecture — from constituency mapping to voter mobilization. 50+ leaders guided to victory pan-India over 7+ years.</p></div>
+      <div class="ec"><div class="ec-num">02</div><h3>Media &amp; PR Strategy</h3><p>Senior PR Strategist, State Election Commission Delhi — led voter awareness campaigns and increased polling percentages at the highest governance level.</p></div>
+      <div class="ec"><div class="ec-num">03</div><h3>Data-Driven Campaigns</h3><p>Leveraging political data analytics, voter segmentation, and sentiment analysis for precision electoral targeting across India.</p></div>
+      <div class="ec"><div class="ec-num">04</div><h3>Governance Consulting</h3><p>Bridging policy intent with public communication — ensuring governance translates into measurable electoral trust and citizen connect.</p></div>
+      <div class="ec"><div class="ec-num">05</div><h3>International Consulting</h3><p>Senior Consultant at top MNCs — managed national &amp; international networks alongside Chetan Bhagat as brand ambassador.</p></div>
+      <div class="ec"><div class="ec-num">06</div><h3>Motivational Speaking</h3><p>90+ talks delivered. 5+ international conference speaker representing India on governance, health &amp; poverty platforms globally.</p></div>
     </div>
   </div>
 </section>
@@ -415,7 +440,7 @@ footer{
         <div class="vscan-name">V SCAN ALLIANCE</div>
         <div class="vscan-fullform">Vikas Strategic Citizens Accountability Network</div>
         <p>V SCAN Alliance is a next-generation political consulting and policy firm founded on the belief that democracy deserves better strategy, and citizens deserve better governance.</p>
-        <p>Unlike traditional consulting firms, V SCAN extends its role beyond elections — integrating both pre-election strategy and post-election governance to ensure policy implementation is grounded in real public needs rather than top-down assumptions. The firm works selectively with leaders and parties aligned with futuristic developmental approaches, reflecting the philosophy of "VIKAS." With pan-India reach across 10+ states and 100+ leaders guided, V SCAN is redefining accountability and impact in political consulting.</p>
+        <p>The firm specializes in ethical, data-driven, and research-backed political consulting — working with parties and candidates who wish to build durable public trust through honest campaigns and accountable governance. With pan-India reach and 50+ leaders guided, V SCAN is redefining what political consulting means in India.</p>
         <a class="btn btn-gold" href="#contact" style="margin-top:12px;display:inline-block">Partner with V SCAN</a>
       </div>
       <div class="vpills">
@@ -423,7 +448,7 @@ footer{
         <div class="vp"><div class="vp-letter">S</div><div class="vp-body"><div class="vp-word">Strategic</div><div class="vp-desc">Data-driven, research-backed campaign architecture</div></div></div>
         <div class="vp"><div class="vp-letter">C</div><div class="vp-body"><div class="vp-word">Citizens</div><div class="vp-desc">Citizen-first policy alignment and grassroots connect</div></div></div>
         <div class="vp"><div class="vp-letter">A</div><div class="vp-body"><div class="vp-word">Accountability</div><div class="vp-desc">Transparent governance and ethical campaign standards</div></div></div>
-        <div class="vp"><div class="vp-letter">N</div><div class="vp-body"><div class="vp-word">Network</div><div class="vp-desc">Pan-India — 100+ leaders, 10+ states, one mission</div></div></div>
+        <div class="vp"><div class="vp-letter">N</div><div class="vp-body"><div class="vp-word">Network</div><div class="vp-desc">Pan-India — 50+ leaders, multiple states, one mission</div></div></div>
       </div>
     </div>
   </div>
@@ -439,50 +464,36 @@ footer{
         <div class="tl-dot"></div>
         <div class="tl-yr">Present</div>
         <div class="tl-role">Founder &amp; CEO — V SCAN Alliance</div>
-        <div class="tl-org">Vikas Strategic Citizens Accountability Network | Pan-India (10+ States)</div>
-        <div class="tl-desc">Vikas Kumar Choudhary is the Founder &amp; CEO of V SCAN Alliance (Vikas Strategic Citizens Accountable Network), a next-generation political consulting and public policy firm driven by the vision of strengthening democracy through strategic governance and citizen-centric insights. The organization works selectively with leaders and parties aligned with futuristic developmental approaches, reflecting the philosophy of "VIKAS." Unlike traditional consulting firms, V SCAN extends its role beyond elections by integrating both pre-election strategy and post-election governance, ensuring that policy implementation is grounded in real public needs rather than top-down assumptions, thereby redefining accountability and impact in political consulting.</div>
+        <div class="tl-org">Vikas Strategic Citizens Accountability Network | Pan-India</div>
+        <div class="tl-desc">Leading India's next-generation political consulting firm — guiding 50+ political leaders and parties through ethical, data-driven electoral strategies with pan-India operations across multiple states.</div>
       </div>
       <div class="tli">
         <div class="tl-dot"></div>
         <div class="tl-yr">Key Role</div>
-        <div class="tl-role">Senior Political Strategist</div>
-        <div class="tl-org">Multi-State Campaign Leadership</div>
-        <div class="tl-desc">Prior to founding V SCAN Alliance, Vikas Kumar Choudhary established himself as a Senior Political Strategist, working both independently and with reputed political consulting firms. He has an extensive track record across more than 10 states in India, where he has strategically guided over 100 political leaders and collaborated with more than 4 political parties. With expertise in campaign design and execution, he has successfully conceptualized and led over 100 political campaigns. Known for his grassroots understanding and ethical strategic approach, he has consistently delivered impactful political narratives and managed high-stakes campaigns in senior and project leadership roles.</div>
-      </div>
-      <div class="tli">
-        <div class="tl-dot"></div>
-        <div class="tl-yr">Key Role</div>
-        <div class="tl-role">Media &amp; Senior PR Strategist</div>
+        <div class="tl-role">Media &amp; PR Strategist</div>
         <div class="tl-org">State Election Commission, Delhi</div>
-        <div class="tl-desc">In his role as Media and Senior PR Strategist with the State Election Commission, Delhi, Vikas led multidisciplinary teams comprising journalists and public relations professionals to execute large-scale voter awareness campaigns. His strategic communication planning and strong ground execution contributed significantly to enhancing voter engagement and increasing polling percentages, demonstrating his ability to combine media strategy with public mobilization effectively.</div>
+        <div class="tl-desc">Managed the State Election Commission Delhi's PR and media team in a senior managerial role — created large-scale voter awareness campaigns and was directly responsible for increasing voter polling percentages across Delhi. Coordinated with all key stakeholders at the highest governance levels.</div>
       </div>
       <div class="tli">
         <div class="tl-dot"></div>
         <div class="tl-yr">MNC Experience</div>
         <div class="tl-role">Senior Consultant</div>
-        <div class="tl-org">Henry Harvin &amp; Data Trend | Leading International Organizations</div>
-        <div class="tl-desc">At the early stage of his professional career, Vikas Kumar Choudhary joined leading international organizations such as Henry Harvin and Data Trend in senior consulting roles immediately after completing his education. In these positions, he managed national and international client networks, drove revenue growth through strategic planning and execution, and led PR operations alongside developing high-impact sales strategies. His contributions were instrumental in strengthening organizational growth and expanding business outreach through structured and result-oriented approaches.</div>
+        <div class="tl-org">Hendry Harbin &amp; Data Trend | Chetan Bhagat — Brand Ambassador</div>
+        <div class="tl-desc">Among the very few recruited at a senior position in two leading MNCs. Managed national and international client networks, drove revenue through strategic sales and PR operations, working alongside Chetan Bhagat as brand ambassador.</div>
       </div>
       <div class="tli">
         <div class="tl-dot"></div>
-        <div class="tl-yr">Education</div>
-        <div class="tl-role">Journalism &amp; Public Administration</div>
-        <div class="tl-org">University of Delhi, North Campus</div>
-        <div class="tl-desc">Vikas pursued higher education after successfully clearing multiple competitive entrance examinations for prestigious institutions, including Jamia Millia Islamia, Makhanlal Chaturvedi National University of Journalism and Communication, and the University of Delhi. He ultimately chose North Campus, University of Delhi, where he completed his studies in Journalism, followed by a postgraduate degree in Public Administration. During his academic journey, he earned financial aid and scholarships based on merit and academic performance, actively participated in student movements and rights-based initiatives, and represented India in several national and overseas Model United Nations (MUN) conferences, engaging in global policy discussions on critical issues such as environment, education, health, and livelihood.</div>
-      </div>
-      <div class="tli">
-        <div class="tl-dot"></div>
-        <div class="tl-yr">Schooling</div>
-        <div class="tl-role">Early Leadership &amp; Schooling</div>
-        <div class="tl-org">Sarvodaya Senior Secondary School, Baghpat | Head Boy &amp; House Captain</div>
-        <div class="tl-desc">Vikas completed his schooling at Sarvodaya Senior Secondary School, Baghpat, where he demonstrated strong leadership qualities from an early age. He held key positions such as Head Boy and House Captain, reflecting his organizational abilities and leadership potential during formative years. His continued association as an alumnus further highlights his lasting connection with the institution that laid the foundation for his future journey.</div>
+        <div class="tl-yr">Global Platforms</div>
+        <div class="tl-role">International Conference Speaker</div>
+        <div class="tl-org">India Model United Nations &amp; India Social Talks</div>
+        <div class="tl-desc">Selected for 5+ international conferences on governance, health, and poverty — representing India on national and international platforms. Delivered 90+ motivational talks inspiring youth toward leadership, governance, and public service.</div>
       </div>
       <div class="tli">
         <div class="tl-dot"></div>
         <div class="tl-yr">Roots</div>
-        <div class="tl-role">Early Life — Baghpat, Uttar Pradesh</div>
-        <div class="tl-org">Anandpur urf Bandpur, Baghpat District, UP</div>
-        <div class="tl-desc">Born in the small village of Anandpur urf Bandpur in Baghpat district, Uttar Pradesh, Vikas Kumar Choudhary's grassroots upbringing played a defining role in shaping his perspective towards governance, leadership, and public service. His early exposure to rural socio-political realities instilled a deep understanding of public needs, which continues to influence his people-centric and ethical approach to political consulting and policy strategy.</div>
+        <div class="tl-role">Foundation — Baghpat, Uttar Pradesh</div>
+        <div class="tl-org">Journalism &amp; Public Administration</div>
+        <div class="tl-desc">Born and raised in Baghpat, UP — the grassroots foundation that drives Vikas's deep connect with India's ground-level political reality. Trained in Journalism and Public Administration, blending communication sharpness with policy depth.</div>
       </div>
     </div>
   </div>
@@ -494,12 +505,12 @@ footer{
     <div class="st">Achievements</div>
     <div class="sd"><div class="sd-line"></div><div class="sd-gap"></div><div class="sd-line2"></div></div>
     <div class="ach-grid">
-      <div class="ac"><div class="ac-icon">SEC</div><h3>State Election Commission</h3><p>Senior Media &amp; PR Strategist, Delhi — led journalist and PR teams to drive voter awareness campaigns, significantly increasing polling percentages across the capital.</p></div>
-      <div class="ac"><div class="ac-icon">INT</div><h3>5+ Overseas Conferences</h3><p>Selected motivational speaker representing India at MUNs and overseas conferences on governance, environment, health, education, and livelihood — contributing ground-reality perspectives to global policy discussions.</p></div>
-      <div class="ac"><div class="ac-icon">20+</div><h3>Motivational Speaking</h3><p>20+ impact-driven motivational speaking sessions delivered across schools and colleges — inspiring youth toward leadership, public service, and governance with a focus on outcomes over recognition.</p></div>
-      <div class="ac"><div class="ac-icon">MNC</div><h3>MNC Senior Consultant</h3><p>Senior roles at Henry Harvin &amp; Data Trend immediately after education — managed international clients, drove revenue growth, and led strategic PR and sales operations.</p></div>
-      <div class="ac"><div class="ac-icon">100+</div><h3>Leaders Guided</h3><p>Shaped winning campaigns and governance strategies for 100+ political leaders and parties across 10+ states in India over 7+ years of senior strategic engagement.</p></div>
-      <div class="ac"><div class="ac-icon">GNI</div><h3>Grassroots to National Identity</h3><p>Vikas Kumar Choudhary has built a self-made identity from a small village in Baghpat district to a recognized name in political consulting. Through consistent excellence in school leadership, academic achievements, and professional success, he has established a reputation of credibility and impact — from early leadership roles to national-level strategic work, now further strengthened through V SCAN Alliance.</p></div>
+      <div class="ac"><div class="ac-icon">SEC</div><h3>State Election Commission</h3><p>Senior Media &amp; PR Strategist, Delhi — drove voter awareness and increased polling percentage across the capital.</p></div>
+      <div class="ac"><div class="ac-icon">INT</div><h3>5+ International Conferences</h3><p>Selected speaker representing India at IMUN, India Social Talks on governance, health &amp; poverty globally.</p></div>
+      <div class="ac"><div class="ac-icon">90+</div><h3>Motivational Talks</h3><p>90+ sessions delivered inspiring youth and future leaders toward governance, accountability, and public service.</p></div>
+      <div class="ac"><div class="ac-icon">MNC</div><h3>MNC Senior Consultant</h3><p>Senior roles at Hendry Harbin &amp; Data Trend — managed international clients alongside Chetan Bhagat as brand ambassador.</p></div>
+      <div class="ac"><div class="ac-icon">50+</div><h3>Leaders Guided</h3><p>Shaped winning campaigns and governance strategies for 50+ political leaders and parties across India over 7+ years.</p></div>
+      <div class="ac"><div class="ac-icon">UP</div><h3>Baghpat to Pan-India</h3><p>From grassroots in Baghpat, Uttar Pradesh to pan-India political consulting — driven by vision and democratic values.</p></div>
     </div>
   </div>
 </section>
@@ -518,11 +529,11 @@ footer{
         </div>
         <div class="cr">
           <div class="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="c-lbl">Email</div><div class="c-val"><a href="/cdn-cgi/l/email-protection#8cfae5e7edffe7f9e1edfeefe4e3f9e8e4edfef5ccfaffefede2ede0e0e5ede2efe9a2efe3e1"><span class="__cf_email__" data-cfemail="691f0002081a021c04081b0a01061c0d01081b10291f1a0a08070805050008070a0c470a0604">[email&#160;protected]</span></a></div></div>
+          <div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:vikaskumarchoudhary@vscanalliance.com">vikaskumarchoudhary@vscanalliance.com</a></div></div>
         </div>
         <div class="cr">
           <div class="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-          <div><div class="c-lbl">Born &amp; Based</div><div class="c-val">Baghpat, UP → Delhi</div></div>
+          <div><div class="c-lbl">Born &amp; Based</div><div class="c-val">Baghpat, UP → Pan-India</div></div>
         </div>
         <div class="cr">
           <div class="c-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8a84b" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
@@ -545,3 +556,13 @@ footer{
   <div class="foot-left">VKC</div>
   <div class="foot-mid">
     <strong>V SCAN Alliance</strong> — Vikas Strategic Citizens Accountability Network<br>
+    Baghpat, Uttar Pradesh → Pan-India Operations
+  </div>
+  <div class="foot-right">
+    © 2025 Vikas Kumar Choudhary<br>
+    All Rights Reserved
+  </div>
+</footer>
+
+</body>
+</html>
